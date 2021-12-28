@@ -10,7 +10,6 @@
 - [**DDos Attack Detection:**](https://github.com/hassanmido22/Data-Science-Portofolio/tree/main/Machine%20learning/Classification/DDoS%20Attack%20Detection) An ensemble of three different algorithms is combined  together  such  that  each  one  handles a  different stage  of  the  problem  on  which  it  performs  bes
 	- **Dataset** [University  of  Newbrunswick  DDoS2019  dataset](https://www.unb.ca/cic/datasets/ddos-2019.html)
 	-	**Tools:** Sklearn , Matplotlib , Numpy , Pandas.
-	-	
 ### Natural Language processing:
  -  [**Sentiment analysis with chatbot:**](https://github.com/hassanmido22/Data-Science-Portofolio/tree/main/Natural%20Language%20Processing/Sentiment%20analysis%20with%20chatbot) simple chatbot that users put their review these reviews are passed to a sentiment analysis model to classify whether it is a positive or negative feedback.
 	 -	**Dataset:** Used twitter dataset on kaggle to train the models on
