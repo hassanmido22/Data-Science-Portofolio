@@ -22,7 +22,9 @@ Classification:
  -  [**Sentiment analysis with chatbot:**](https://github.com/hassanmido22/Data-Science-Portofolio/tree/main/Natural%20Language%20Processing/Sentiment%20analysis%20with%20chatbot) simple chatbot that users put their review these reviews are passed to a sentiment analysis model to classify whether it is a positive or negative feedback.
 	 -	**Dataset:** Used twitter dataset on kaggle to train the models on
 	- **Tools:** NLTK, Sklearn , matplotlib , numpy , pandas
- -  [**Books Classification:**](https://github.com/hassanmido22/Text-Classification) NLP model is simply to classify books depending on their text content using multiple classifiers , it gave us 90% accuracy using SVM 
+ -  [**Books Categories Classification:**](https://github.com/hassanmido22/Text-Classification) Multiclassification model is simply to classify books depending on their category using multiple classifiers with end to end preprocessing pipeline, it resulted in 90% accuracy using SVM 
 	- **Dataset** Used Gutenburg books which used from NLTK library
 	-	**Tools:** NLTK , Sklearn , Matplotlib , Numpy , Pandas
- 
+-	[**Books Categories Clustering:**](https://github.com/hassanmido22/Data-Science-Portofolio/tree/main/Natural%20Language%20Processing/Books%20text%20Clustering) Clustering model is simply to cluster books categories depending on their text content using Kmeans, Hirarical Clustering and Gaussian Mixture with end to end preprocessing pipeline.
+	- **Dataset** Used Gutenburg books which used from NLTK library
+	-	**Tools:** NLTK , Gensim, Sklearn , Matplotlib , Numpy , Pandas.
