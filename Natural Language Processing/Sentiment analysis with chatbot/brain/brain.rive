@@ -1,0 +1,133 @@
+! version= 2.0
+! local concat = space
+
+! sub question = asking
+! sub ask = asking
+! sub to know = asking
+! sub complains = complain
+! sub problem = complain
+! sub problems = complain
+! sub thank = thanks
+
+
+> begin
+// send request
++ request
+// go to the new_user topic
+* <get met> == undefined => <set met=true>{topic=welcome}{ok}
+- {ok}
+< begin
+
+// ############### Important to understand the code  ###############
+
+// "create answer" is a function takes two inputs "text_key" and "buttons(data, value)"
+// the two inputs separated by space so any text need space will separated with "_" instead of white space
+// in buttons data and value will separated with "=", ! only for no buttons
+// the function removes separators and return json with corrected data
+
+
+> topic welcome
++ *
+- <call>create_answer
+^welcome
+^Complain=complain!Asking=asking // All available services till now
+^</call> {topic=after_welcoming}
+< topic
+
+> topic after_welcoming
+// List all possible answers
++ complain
+- <call>create_answer
+^complain
+^!
+^</call> {topic=complain}
+
++ * complain
+@complain
+
++ complain *
+@complain
+
++ * complain *
+@complain
+
++ asking
+- <call>create_answer
+^asking
+^!
+^</call> {topic=asking}
+
++ * asking
+@asking
+
++ asking *
+@asking
+
++ * asking *
+@asking
+
++ thanks
+- <call>create_answer
+^thanks_response
+^!
+^</call> {topic=thanks}
+
++ * thanks
+@thanks
+
++ thanks *
+@thanks
+
++ * thanks *
+@thanks
+
++ *
+- <call>create_answer
+^welcome
+^Complain=complain!Asking=asking // All available services till now
+^</call>
+< topic
+
+> topic complain
++ *
+- <call>create_answer
+^complain_received
+^Another_question=asking!Another_complain=complain!Thanks=thanks
+^</call> {topic=after_welcoming}
+< topic
+
+> topic asking
++ *
+- <call>create_answer
+^asking_received
+^Another_question=asking!Another_complain=complain!Thanks=thanks
+^</call> {topic=after_welcoming}
+< topic
+
+> topic thanks
++ *
+- <call>add_review
+^<star>
+^<id>
+^</call> {topic=welcome}
+< topic
+
+
+> object create_answer python
+  import help_functions
+  text = args[0]
+
+  corrected_buttons = []
+  if args[1] != '!':
+      buttons = args[1].split('!')
+      for b in buttons:
+        corrected_buttons.append(b.replace("_", ' '))
+
+  return help_functions.create_answer(text, corrected_buttons)
+< object
+
+> object add_review python
+  import help_functions
+  text = " ".join(args[:len(args) -2])
+  return help_functions.add_review(args[-2], text)
+< object
