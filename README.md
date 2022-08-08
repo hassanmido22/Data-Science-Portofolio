@@ -1,5 +1,5 @@
 # Data science portofolio
-## [Resume](https://drive.google.com/file/d/1D_0Ueik-AiTROsYUBLoMKU3XABE4k9bT/view?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/hassan-essam)
+## [Resume](https://drive.google.com/file/d/1PADSNr7sbyQ1GC05Do_nvcDUkHNBDbXg/view?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/hassan-essam)
 ## Macine Learning:
 ### Classification :
  - [**Pen-Based Recognition of Handwritten Digits:**](https://github.com/hassanmido22/Data-Science-Portofolio/tree/main/Machine%20learning/Classification/Pendigit%20Classification) Classify the handwritten digits using classical machine learning models using Decision tree, SVM, MLP, RandomForest and finall having a stacking of all of these previous models, The winning model was the stacking approach which achived 0.981 accuracy.
